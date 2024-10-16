@@ -21,39 +21,39 @@ public class GameRestController {
 	@Autowired
 	GameService gameService;
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value="/all",method = RequestMethod.GET)
 	public List<Game> getAllGames() {
 		return gameService.getAllGames();
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/getbyid/{id}", method = RequestMethod.GET)
 	public Game getGameById(@PathVariable("id") Long id) {
 		System.out.println(id);
 
 		return gameService.getGame(id);
 	}
 
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value= "/addgame",method = RequestMethod.POST)
 	public Game createGame(@RequestBody Game game) {
 		return gameService.saveGame(game);
 	}
 
-	@RequestMapping(method = RequestMethod.PUT)
+	@RequestMapping(value="/updategame",method = RequestMethod.PUT)
 	public Game updateGame(@RequestBody Game gameDTO) {
 		return gameService.updateGame(gameDTO);
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "delgame/{id}", method = RequestMethod.DELETE)
 	public void deleteGame(@PathVariable("id") Long id) {
 		gameService.deleteGameById(id);
 	}
 
-	@RequestMapping(value = "/plsstudio/{idStudio}", method = RequestMethod.GET)
+	@RequestMapping(value = "/gamesbystudio/{idStudio}", method = RequestMethod.GET)
 	public List<Game> getGamesByStudioId(@PathVariable("idStudio") Long idStudio) {
 		return gameService.findByStudioIdStudio(idStudio);
 	}
 
-	@RequestMapping(value = "/plsByName/{nom}", method = RequestMethod.GET)
+	@RequestMapping(value = "/gamesbyname/{nom}", method = RequestMethod.GET)
 	public List<Game> findByNomGameContains(@PathVariable("nom") String nom) {
 		return gameService.findByNomGameContains(nom);
 	}
