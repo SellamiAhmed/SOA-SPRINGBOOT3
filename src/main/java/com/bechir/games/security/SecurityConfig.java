@@ -41,6 +41,8 @@ public class SecurityConfig {
 						.requestMatchers(HttpMethod.POST, "/api/addgame/**").hasAnyAuthority("ADMIN")
 						.requestMatchers(HttpMethod.PUT, "/api/updategame/**").hasAuthority("ADMIN")
 						.requestMatchers(HttpMethod.DELETE, "/api/delgame/**").hasAuthority("ADMIN")
+						.requestMatchers("/api/image/**").permitAll() // Add this line for public access
+
 						.anyRequest().authenticated())
 				.addFilterBefore(new JWTAuthorizationFilter(),
 						UsernamePasswordAuthenticationFilter.class);

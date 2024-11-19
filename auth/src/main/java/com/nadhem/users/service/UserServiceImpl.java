@@ -108,6 +108,9 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void sendEmailUser(User u, String code) {
+
+		System.out.println("Sending email to " + u.getEmail());
+
 		String emailBody = "Bonjour " + "<h1>" + u.getUsername() + "</h1>" +
 				" Votre code de validation est " + "<h1>" + code + "</h1>";
 

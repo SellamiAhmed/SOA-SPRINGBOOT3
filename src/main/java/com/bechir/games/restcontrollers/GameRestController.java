@@ -21,9 +21,16 @@ public class GameRestController {
 	@Autowired
 	GameService gameService;
 
-	@RequestMapping(value="/all",method = RequestMethod.GET)
+	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public List<Game> getAllGames() {
-		return gameService.getAllGames();
+		List<Game> games = gameService.getAllGames();
+		for (Game game : games) {
+			game.getImages().size(); // Force initialization of the images field
+		}
+		System.out.println(games);
+		System.out.println("aaaaaaaaaaaaaaaaaaaa");
+	
+		return games;
 	}
 
 	@RequestMapping(value = "/getbyid/{id}", method = RequestMethod.GET)
@@ -35,6 +42,9 @@ public class GameRestController {
 
 	@RequestMapping(value= "/addgame",method = RequestMethod.POST)
 	public Game createGame(@RequestBody Game game) {
+		System.out.println(game);
+		System.out.println("------------------------------------------------------------------------------------------");
+
 		return gameService.saveGame(game);
 	}
 

@@ -8,11 +8,16 @@ import org.springframework.stereotype.Service;
 import com.bechir.games.entities.Game;
 import com.bechir.games.entities.Studio;
 import com.bechir.games.repos.GameRepository;
+import com.bechir.games.repos.ImageRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class GameServiceImpl implements GameService {
 	@Autowired
 	GameRepository gameRepository;
+
+	@Autowired
+	ImageRepository imageRepository;
 
 	@Override
 	public void deleteGame(Game p) {
@@ -31,13 +36,24 @@ public class GameServiceImpl implements GameService {
 
 	@Override
 	public Game updateGame(Game p) {
-		return gameRepository.save(p);
+		// Long oldGameImageId = this.getGame(p.getIdGame()).getImage().getIdImage();
+		// Long newGameImageId = p.getImage().getIdImage();
+
+		Game updatedgame = gameRepository.save(p);
+
+		// if (oldGameImageId != newGameImageId)
+		// imageRepository.deleteById(oldGameImageId);
+
+		return updatedgame;
 	}
 
 	@Override
+	@Transactional
 	public Game getGame(Long id) {
-
-		Game p = gameRepository.findById(id).get();
+		Game p = gameRepository.findById(id).orElse(null);
+		if (p != null) {
+			p.getImages().size(); // Force initialization of the images field
+		}
 		return p;
 	}
 

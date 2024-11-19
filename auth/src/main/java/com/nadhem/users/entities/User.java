@@ -1,5 +1,6 @@
 package com.nadhem.users.entities;
 import java.util.List;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,12 +11,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
-import lombok.Data;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-@Data @NoArgsConstructor @AllArgsConstructor
+@Data 
+@NoArgsConstructor 
+@AllArgsConstructor
 @Entity
 public class User {	
 	@Id 
@@ -32,4 +35,14 @@ public class User {
 	@JoinTable(name="user_role",joinColumns = @JoinColumn(name="user_id") , 
 			   inverseJoinColumns = @JoinColumn(name="role_id")) 
 	private List<Role> roles; 
+
+
+	public User(String username, String password, Boolean enabled, String email) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.enabled = enabled;
+		this.email = email;
+	}
+	
 }

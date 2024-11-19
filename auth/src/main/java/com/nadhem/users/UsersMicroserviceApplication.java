@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.nadhem.users.service.UserService;
 
+
 @SpringBootApplication
 public class UsersMicroserviceApplication {
 	
@@ -24,9 +25,9 @@ public class UsersMicroserviceApplication {
 	// 	userService.addRole(new Role(null,"USER"));
 		
 	// 	//ajouter les users
-	// 	userService.saveUser(new User(null,"admin","123",true,null));
-	// 	userService.saveUser(new User(null,"nadhem","123",true,null));
-	// 	userService.saveUser(new User(null,"yassine","123",true,null));
+	// 	userService.saveUser(new User("admin","123",true,null));
+	// 	userService.saveUser(new User("nadhem","123",true,null));
+	// 	userService.saveUser(new User("yassine","123",true,null));
 		
 	// 	//ajouter les rôles aux users
 	// 	userService.addRoleToUser("admin", "ADMIN");

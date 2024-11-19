@@ -29,5 +29,6 @@ public interface GameRepository extends JpaRepository<Game, Long> {
 	 
 	 @Query("select p from Game p order by p.nomGame ASC, p.rating DESC")
 	 List<Game> trierGamesNomsRating ();
+	 
 
 }
