@@ -1,9 +1,11 @@
-package com.bechir.games.service;
+package com.ahmed.games.service;
 
 import java.io.IOException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.multipart.MultipartFile;
-import com.bechir.games.entities.Image;
+
+import com.ahmed.games.entities.Image;
+
 import java.util.List;
 
 public interface ImageService {

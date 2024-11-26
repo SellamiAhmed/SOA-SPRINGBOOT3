@@ -1,4 +1,4 @@
-package com.bechir.games.service;
+package com.ahmed.games.service;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -9,15 +9,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.bechir.games.entities.Image;
-import com.bechir.games.repos.ImageRepository;
-import com.bechir.games.entities.Game;
-import com.bechir.games.service.GameService;
+import com.ahmed.games.entities.Game;
+import com.ahmed.games.entities.Image;
+import com.ahmed.games.repos.GameRepository;
+import com.ahmed.games.repos.ImageRepository;
+import com.ahmed.games.service.GameService;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.bechir.games.repos.GameRepository;
 @Service
 public class ImageServiceImpl implements ImageService {
     @Autowired
@@ -74,7 +73,7 @@ public class ImageServiceImpl implements ImageService {
                 .name(file.getOriginalFilename())
                 .type(file.getContentType())
                 .image(file.getBytes())
-                .produit(p).build());
+                .game(p).build());
     }
 
     @Override

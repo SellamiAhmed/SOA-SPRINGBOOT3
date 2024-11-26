@@ -1,4 +1,4 @@
-package com.bechir.games.entities;
+package com.ahmed.games.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,7 +13,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Lob;
@@ -32,8 +31,6 @@ public class Image {
     @Column(name = "IMAGE", length = 4048576)
     @Lob
     private byte[] image;
-    @OneToOne
-    private Game produit;
 
     @ManyToOne
     @JoinColumn(name = "GAME_ID")

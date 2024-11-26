@@ -1,4 +1,4 @@
-package com.bechir.games;
+package com.ahmed.games;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 
-import com.bechir.games.entities.Game;
-import com.bechir.games.entities.Studio; // Correct import
+import com.ahmed.games.entities.Game;
+import com.ahmed.games.entities.Studio;
 
 @SpringBootApplication
 public class GamesApplication implements CommandLineRunner {

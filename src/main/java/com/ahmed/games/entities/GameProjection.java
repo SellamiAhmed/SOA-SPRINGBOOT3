@@ -1,4 +1,4 @@
-package com.bechir.games.entities;
+package com.ahmed.games.entities;
 
 import org.springframework.data.rest.core.config.Projection;
 

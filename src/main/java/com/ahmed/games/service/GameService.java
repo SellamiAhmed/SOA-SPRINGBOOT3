@@ -1,10 +1,10 @@
 
-package com.bechir.games.service;
+package com.ahmed.games.service;
 
 import java.util.List;
 
-import com.bechir.games.entities.Game;
-import com.bechir.games.entities.Studio;
+import com.ahmed.games.entities.Game;
+import com.ahmed.games.entities.Studio;
 
 public interface GameService {
 	Game saveGame(Game p);

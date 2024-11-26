@@ -1,4 +1,4 @@
-package com.bechir.games.entities;
+package com.ahmed.games.entities;
 
 import java.util.Date;
 import java.util.List;
@@ -14,7 +14,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -28,9 +27,10 @@ public class Game {
     private Date releaseDate;
     @ManyToOne
     private Studio studio;
+    /* 
     @OneToOne(fetch = FetchType.LAZY)
     private Image image;
-
+    */
     @OneToMany(mappedBy = "game", fetch = FetchType.LAZY)
     @JsonManagedReference
     @JsonProperty("images")
@@ -92,14 +92,6 @@ public class Game {
 
     public void setStudio(Studio studio) {
         this.studio = studio;
-    }
-
-    public Image getImage() {
-        return image;
-    }
-
-    public void setImage(Image image) {
-        this.image = image;
     }
 
     public List<Image> getImages() {

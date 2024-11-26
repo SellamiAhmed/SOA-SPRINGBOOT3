@@ -1,11 +1,11 @@
-package com.bechir.games;
+package com.ahmed.games;
 
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.bechir.games.repos.GameRepository;
+import com.ahmed.games.repos.GameRepository;
 @SpringBootTest
 class GamesApplicationTests {
 

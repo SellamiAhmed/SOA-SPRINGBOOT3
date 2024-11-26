@@ -1,15 +1,15 @@
-package com.bechir.games.service;
+package com.ahmed.games.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.bechir.games.entities.Game;
-import com.bechir.games.entities.Studio;
-import com.bechir.games.repos.GameRepository;
-import com.bechir.games.repos.ImageRepository;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.ahmed.games.entities.Game;
+import com.ahmed.games.entities.Studio;
+import com.ahmed.games.repos.GameRepository;
+import com.ahmed.games.repos.ImageRepository;
 
 @Service
 public class GameServiceImpl implements GameService {

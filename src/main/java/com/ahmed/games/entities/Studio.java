@@ -1,4 +1,4 @@
-package com.bechir.games.entities;
+package com.ahmed.games.entities;
 
 import java.util.List;
 

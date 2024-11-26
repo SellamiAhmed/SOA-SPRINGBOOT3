@@ -1,4 +1,4 @@
-package com.bechir.games.restcontrollers;
+package com.ahmed.games.restcontrollers;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bechir.games.entities.Studio;
-import com.bechir.games.repos.StudioRepository;
+import com.ahmed.games.entities.Studio;
+import com.ahmed.games.repos.StudioRepository;
 
 @RestController
 @RequestMapping("/api/studio")

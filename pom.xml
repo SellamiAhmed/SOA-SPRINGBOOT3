@@ -17,7 +17,7 @@
 		<!-- lookup parent from repository -->
 	</parent>
 	<groupId>
-		com.bechir
+		com.ahmed
 	</groupId>
 	<artifactId>
 		games
